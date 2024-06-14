@@ -21,7 +21,8 @@ const Layout = ({ children }) => {
       // bg-site
       className={`page text-white bg-cover bg-no-repeat bg-blend-color-dodge ${sora.variable} font-sora relative`}
     >
-      <div className="objects z-10">
+      {/* <TopLeftImg /> */}
+      <div className="objects z-[1]">
         <ul className="box">
           <li></li>
           <li></li>
@@ -31,7 +32,6 @@ const Layout = ({ children }) => {
           <li></li>
         </ul>
       </div>
-      {/* <TopLeftImg /> */}
       <Language />
       <Nav />
       <motion.div
@@ -41,23 +41,23 @@ const Layout = ({ children }) => {
         exit="hidden"
       >
         <Header />
-        <div className="flex xl:flex-row flex-col gap-y-4 items-center gap-x-3 fixed bottom-0 translate-x-[45%] py-5 z-[200]">
+        <motion.div
+          variants={fadeIn("down", 0.4)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="flex xl:flex-row flex-col gap-y-4 items-center gap-x-3 fixed bottom-0 left-[14%] py-5 z-[200]"
+        >
           <div className="flex justify-center xl:hidden relative z-[100]">
             <ProjectsBtn />
           </div>
-          <motion.div
-            variants={fadeIn("down", 0.4)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="hidden xl:flex z-[100]"
-          >
+          <div className="hidden xl:flex z-[100]">
             <ProjectsBtn />
-          </motion.div>
+          </div>
           <Socials />
-        </div>
+        </motion.div>
       </motion.div>
-      <div className="z-20 h-full">{children}</div>
+      <div className="h-full">{children}</div>
     </div>
   );
 };

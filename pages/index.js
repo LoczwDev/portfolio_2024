@@ -7,7 +7,7 @@ import ParticlesContainer from "../components/ParticlesContainer";
 import Socials from "../components/Socials";
 const Home = () => {
   return (
-    <div className=" h-full z-[50]">
+    <div className=" h-full z-[100] relative">
       {/* Text Section */}
       {/* bg-gradient-to-r from-primary/10 via-black/30 to-black/10 */}
       <div className="w-full h-full  ">
